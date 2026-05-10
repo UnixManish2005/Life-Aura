@@ -237,7 +237,7 @@ st.markdown(
     <div class="footer">
         © {current_year} <strong>Manishankar Dey</strong> • 
         All Rights Reserved • 
-        Created with ❤️ using Streamlit
+        
     </div>
     """,
     unsafe_allow_html=True
