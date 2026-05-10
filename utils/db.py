@@ -31,14 +31,18 @@ def _get_database_url() -> str:
 DATABASE_URL = _get_database_url()
 
 if DATABASE_URL:
-    # Supabase / Heroku Postgres may give 'postgres://' — SQLAlchemy needs 'postgresql://'
     if DATABASE_URL.startswith("postgres://"):
-        DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+        DATABASE_URL = DATABASE_URL.replace(
+            "postgres://",
+            "postgresql+psycopg2://",
+            1
+        )
+
     engine = create_engine(
         DATABASE_URL,
         pool_pre_ping=True,
         pool_recycle=300,
-        
+        echo=False
     )
 else:
     # Local SQLite fallback
