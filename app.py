@@ -1,5 +1,5 @@
 """
-AI Life Dashboard – Main entry point.
+Life Aura – Main entry point.
 Run with: streamlit run app.py
 """
 
