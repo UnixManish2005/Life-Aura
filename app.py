@@ -192,3 +192,53 @@ if st.session_state["logged_in"]:
     show_app()
 else:
     show_auth()
+
+# ════════════════════════════════════════════════════════════════════════════
+# FOOTER / WATERMARK
+# ════════════════════════════════════════════════════════════════════════════
+
+from datetime import datetime
+
+current_year = datetime.now().year
+
+st.markdown(
+    f"""
+    <style>
+    .footer {{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 20, 0.92);
+        backdrop-filter: blur(10px);
+        color: #94a3b8;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        z-index: 999999;
+    }}
+
+    .footer strong {{
+        color: #22d3ee;
+    }}
+
+    .footer a {{
+        color: #6366f1;
+        text-decoration: none;
+        font-weight: 600;
+    }}
+
+    .footer a:hover {{
+        color: #22d3ee;
+    }}
+    </style>
+
+    <div class="footer">
+        © {current_year} <strong>Manishankar Dey</strong> • 
+        All Rights Reserved • 
+        Created with ❤️ using Streamlit
+    </div>
+    """,
+    unsafe_allow_html=True
+)
