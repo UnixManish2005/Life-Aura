@@ -1,0 +1,11 @@
+[ui]
+# Hide the auto-detected multi-page navigation in the top-left
+# so only our custom sidebar radio nav shows
+hideSidebarNav = true
+
+[theme]
+base = "dark"
+primaryColor = "#6366f1"
+backgroundColor = "#0f1117"
+secondaryBackgroundColor = "#1a1d2e"
+textColor = "#e2e8f0"
